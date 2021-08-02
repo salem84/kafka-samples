@@ -1,0 +1,1 @@
+curl -s -X PUT -H 'Content-Type: application/json' --data @jdbc-connector.json http://localhost:8083/connectors/sink-jdbc-mysql-01/config

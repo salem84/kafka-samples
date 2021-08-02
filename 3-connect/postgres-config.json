@@ -1,0 +1,13 @@
+{
+    "name": "jdbc-sink-connector",
+    "config": {
+      "connector.class": "io.confluent.connect.jdbc.JdbcSinkConnector",
+      "tasks.max": "1",
+      "topics": "to-redis",
+      "connection.url": "jdbc:postgresql://localhost:5432",
+      "connection.user": "postgres",
+      "connection.password": "password",
+      "errors.log.enable": true,
+      "auto.create": true
+    }
+  }

@@ -1,0 +1,13 @@
+{
+    "connector.class"               : "io.confluent.connect.jdbc.JdbcSinkConnector",
+    "connection.url"                : "jdbc:mysql://mysql:3306/demo",
+    "topics"                        : "some_json_data_with_a_schema",
+    "key.converter"                 : "org.apache.kafka.connect.storage.StringConverter",
+    "value.converter"               : "org.apache.kafka.connect.json.JsonConverter",
+    "value.converter.schemas.enable": "true",
+    "connection.user"               : "connect_user",
+    "connection.password"           : "asgard",
+    "auto.create"                   : true,
+    "auto.evolve"                   : true,
+    "insert.mode"                   : "insert"
+}

@@ -1,0 +1,19 @@
+{
+    "connector.class": "io.confluent.connect.jdbc.JdbcSinkConnector",
+    "connection.url": "jdbc:mysql://mysql:3306/demo",
+    "topics": "test01",
+    "key.converter": "org.apache.kafka.connect.storage.StringConverter",
+    "connection.user": "connect_user",
+    "connection.password": "asgard",
+    "auto.create": true,
+    "auto.evolve": true,
+    "insert.mode": "upsert",
+    "pk.mode": "record_key",
+    "pk.fields": "MESSAGE_KEY",
+    "transforms": "dropSome,addSome",
+    "transforms.dropSome.type": "org.apache.kafka.connect.transforms.ReplaceField$Value",
+    "transforms.dropSome.blacklist": "COL2",
+    "transforms.addSome.type":"org.apache.kafka.connect.transforms.InsertField$Value",
+    "transforms.addSome.partition.field": "_partition",
+    "transforms.addSome.timestamp.field" : "RECORD_TS"
+}
